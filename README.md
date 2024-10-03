@@ -1,9 +1,13 @@
-# Amharic Tokenization and NER Alignment
+# Fine-Tuning BERT for Yelp Review Sentiment
 
-This branch focuses on tokenizing Amharic text using Hugging Face's AutoTokenizer and a custom-trained SentencePiece tokenizer. The aim is to align tokens with labels for Named Entity Recognition (NER) tasks.
+This branch fine-tunes a BERT model for classifying Yelp reviews into 5 sentiment categories using the [Yelp Review Full dataset](https://huggingface.co/datasets/yelp_review_full).
 
-## Setup
+## Steps
+1. **Dataset**: Load and tokenize Yelp reviews.
+2. **Model**: Use `bert-base-cased` with 5 output labels.
+3. **Training**: Fine-tune using `Trainer` with evaluation per epoch.
+4. **Evaluation**: Calculate accuracy on test data.
 
-1. **Install Dependencies:**
-   ```bash
-   pip install datasets sentencepiece transformers amseg pdf2image pytesseract
+## Installation
+```bash
+pip install transformers datasets evaluate
